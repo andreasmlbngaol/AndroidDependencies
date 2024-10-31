@@ -9,8 +9,9 @@ Repository ini berfungsi sebagai daftar referensi link untuk menambahkan depende
 ### `libs.version.toml`
 ```toml
 [versions]
-hilt = "2.44"
+hilt = "2.52"
 
 [libraries]
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
+```
