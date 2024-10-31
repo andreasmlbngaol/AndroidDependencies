@@ -46,3 +46,66 @@ kapt {
   correctErrorTypes true
 }
 ```
+
+## 2. Type Safe Navigation
+- **Documentation**: [Type Safety Navigation in Jetpack Compose](https://developer.android.com/guide/navigation/design/type-safety)
+- **Dependency Link**: Tambahkan berikut ini ke dalam `libs.version.toml` dan `build.gradle.kts` tingkat module dan project di proyekmu.
+
+### `libs.version.toml` 
+```toml
+[versions]
+navigationCompose = "2.8.3"
+kotlinxSerializationCore = "1.7.3"
+
+[libraries]
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationCore" }
+
+[plugins]
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+```
+
+### `build.gradle.kts project: root`
+```kotlin
+plugins {
+    alias(libs.plugins.compose.compiler) apply false
+}
+```
+
+### `build.gradle.kts module: app`
+```kotlin
+plugins {
+    alias(libs.plugins.kotlin.plugin.serialization)
+    alias(libs.plugins.compose.compiler)
+}
+
+dependencies {
+    implementation(libs.kotlinx.serialization.json)
+}
+```
+
+## 3. Extended Material3 Icon
+- **Documentation**: [Material3 Icon]()
+- **Dependency Link**: Tambahkan berikut ini ke dalam `libs.version.toml` dan `build.gradle.kts` tingkat module di proyekmu.
+
+### `libs.version.toml` 
+```toml
+[versions]
+material3 = "1.3.0"
+materialIconsCore = "1.7.4"
+
+[libraries]
+material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+androidx-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "materialIconsCore" }
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsCore" }
+```
+
+### `build.gradle.kts module: app`
+```kotlin
+dependencies {
+    implementation(libs.material3)
+    implementation(libs.androidx.material.icons.core)
+    implementation(libs.androidx.material.icons.extended)
+}
+```
