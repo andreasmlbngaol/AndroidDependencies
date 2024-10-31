@@ -8,6 +8,7 @@ Repository ini berfungsi sebagai daftar referensi link untuk menambahkan depende
 1. [Hilt](#1-hilt)
 2. [Type Safe Navigation](#2-type-safe-navigation)
 3. [Extended Material3 Icon](#3-extended-material3-icon)
+4. [All](#all)
 
 ## 1. Hilt
 - **Documentation**: [Dagger Hilt Documentation](https://dagger.dev/hilt/gradle-setup)
