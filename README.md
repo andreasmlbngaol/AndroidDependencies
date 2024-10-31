@@ -4,6 +4,11 @@ Repository ini berfungsi sebagai daftar referensi link untuk menambahkan depende
 
 **Repository update sampai 31 Oktober 2024.**
 
+## Daftar Isi
+1. [Hilt](#1-hilt)
+2. [Type Safe Navigation](#2-type-safe-navigation)
+3. [Extended Material3 Icon](#3-extended-material3-icon)
+
 ## 1. Hilt
 - **Documentation**: [Dagger Hilt Documentation](https://dagger.dev/hilt/gradle-setup)
 - **Dependency Link**: Tambahkan berikut ini ke dalam `libs.version.toml` dan `build.gradle.kts` di proyekmu.
