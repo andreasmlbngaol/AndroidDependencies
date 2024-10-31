@@ -1,7 +1,8 @@
 # Dependency List
 
 Repository ini berfungsi sebagai daftar referensi link untuk menambahkan dependencies dalam proyek, terutama untuk Hilt, Compose, dan Material 3. Berikut adalah beberapa referensi dan konfigurasi terkait.
-Repository update sampai 31 Oktober 2024.
+
+**Repository update sampai 31 Oktober 2024.**
 
 ## 1. Hilt
 - **Documentation**: [Dagger Hilt Documentation](https://dagger.dev/hilt/gradle-setup)
