@@ -115,3 +115,63 @@ dependencies {
     implementation(libs.androidx.material.icons.extended)
 }
 ```
+
+## All
+### `libs.version.toml` 
+```toml
+[versions]
+material3 = "1.3.0"
+materialIconsCore = "1.7.4"
+navigationCompose = "2.8.3"
+kotlinxSerializationCore = "1.7.3"
+hilt = "2.44"
+hiltNavigationCompose = "1.2.0"
+
+[libraries]
+material3 = { module = "androidx.compose.material3:material3", version.ref = "material3" }
+androidx-material-icons-core = { module = "androidx.compose.material:material-icons-core", version.ref = "materialIconsCore" }
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended", version.ref = "materialIconsCore" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationCore" }
+hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
+hilt-compiler = { module = "com.google.dagger:hilt-android-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltNavigationCompose" }
+
+[plugins]
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+dagger-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+```
+
+### `build.gradle.kts project: root`
+```kotlin
+plugins {
+  alias(libs.plugins.dagger.hilt) apply false
+  alias(libs.plugins.compose.compiler) apply false
+}
+```
+
+### `build.gradle.kts module: app`
+```kotlin
+plugins {
+    alias(libs.plugins.kotlin.plugin.serialization)
+    alias(libs.plugins.compose.compiler)
+    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+
+}
+
+dependencies {
+    implementation(libs.material3)
+    implementation(libs.androidx.material.icons.core)
+    implementation(libs.androidx.material.icons.extended)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
+    implementation(libs.hilt.navigation.compose)
+}
+
+kapt {
+  correctErrorTypes true
+}
+```
