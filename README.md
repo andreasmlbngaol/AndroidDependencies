@@ -15,3 +15,20 @@ hilt = "2.52"
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hilt" }
 hilt-compiler = { module = "com.google.dagger:hilt-compiler", version.ref = "hilt" }
 ```
+
+### `build.gradle.kts`
+```kotlin
+plugins {
+  id 'kotlin-kapt'
+  id 'com.google.dagger.hilt.android'
+}
+
+dependencies {
+  implementation "com.google.dagger:hilt-android:2.44"
+  kapt "com.google.dagger:hilt-compiler:2.44"
+}
+
+kapt {
+  correctErrorTypes true
+}
+```
