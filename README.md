@@ -87,7 +87,7 @@ dependencies {
 ```
 
 ## 3. Extended Material3 Icon
-- **Documentation**: [Material3 Icon]()
+- **Documentation**: [Material3 Icon](https://m3.material.io/)
 - **Dependency Link**: Tambahkan berikut ini ke dalam `libs.version.toml` dan `build.gradle.kts` tingkat module di proyekmu.
 
 ### `libs.version.toml` 
